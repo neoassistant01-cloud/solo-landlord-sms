@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #1E3A5F;
+  --secondary: #3B82F6;
+  --accent: #10B981;
+  --warning: #F59E0B;
+  --danger: #EF4444;
+  --background: #F8FAFC;
+  --card-bg: #FFFFFF;
+  --text-primary: #1E293B;
+  --text-secondary: #64748B;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text-primary);
+  background: var(--background);
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-xl p-6 shadow-sm border border-gray-100;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  
+  .card:hover {
+    @apply shadow-md;
+    transform: scale(1.02);
+    transition: all 200ms ease-out;
+  }
+  
+  .btn-primary {
+    @apply bg-[#3B82F6] text-white px-4 py-2 rounded-lg font-medium text-sm
+           hover:bg-blue-600 transition-colors duration-200 disabled:opacity-50;
+  }
+  
+  .btn-secondary {
+    @apply border border-[#3B82F6] text-[#3B82F6] px-4 py-2 rounded-lg font-medium text-sm
+           hover:bg-blue-50 transition-colors duration-200;
+  }
+  
+  .btn-danger {
+    @apply bg-[#EF4444] text-white px-4 py-2 rounded-lg font-medium text-sm
+           hover:bg-red-600 transition-colors duration-200;
+  }
+  
+  .input {
+    @apply w-full h-11 px-4 rounded-lg border border-gray-200 text-sm
+           focus:outline-none focus:ring-2 focus:ring-[#3B82F6] focus:border-transparent;
+  }
+  
+  .label {
+    @apply block text-xs font-medium text-[#64748B] mb-1.5;
+  }
+  
+  .badge {
+    @apply px-2.5 py-1 rounded-full text-xs font-medium text-white;
+  }
+  
+  .badge-emergency {
+    @apply bg-[#EF4444];
+  }
+  
+  .badge-urgent {
+    @apply bg-[#F59E0B];
+  }
+  
+  .badge-normal {
+    @apply bg-[#10B981];
+  }
+}
